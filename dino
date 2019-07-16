@@ -1,0 +1,72 @@
+#!/bin/bash
+LINE=""
+if [[ $1 = "run" ]]; then
+STR="Run to the hills!"
+LINE="Run for your life!"
+elif [[ $1 = "catarina" ]]; then
+STR="Hmm..."
+LINE="Quite a pickle indeed."
+elif [[ $1 = "world" ]]; then
+STR="Sekaaaaaaai de ichiban ohime samaaaa~"
+elif [[ $1 = "dna" ]]; then
+STR="Keep absolutely still."
+LINE="His vision is based on movement."
+elif [[ $1 = "scare" ]]; then
+STR="Peek a boo!"
+elif [[ $1 = "cheers" ]]; then
+STR="I think $USER is cute."
+LINE="Yeah, you are cute!"
+elif [[ $1 = "time" ]]; then
+Year=`date +%Y`
+Month=`date +%m`
+Day=`date +%d`
+Hour=`date +%H`
+Minute=`date +%M`
+Second=`date +%S`
+STR="We're the $Day/$Month/$Year and it's $Hour:$Minute:$Second."
+LINE="You're welcome."
+elif [[ $1 = "speak" ]]; then
+STR="Rawr!"
+elif [[ $1 = "clear" ]]; then
+clear
+STR="Wokety pokety wokety wok ~"
+LINE="ABRACABRACABRANACK !"
+elif [[ $1 = "git" ]]; then
+if [[ $2 ]]; then
+git add .
+git commit -m $2
+git push
+STR="add n' commit n' push!"
+LINE="Commit message is: '$2'"
+else
+STR="Hey what is the message for the commit ?"
+LINE="Please ?"
+fi
+elif [[ $1 = "idle" ]]; then
+if [[ $2 = "fast" ]]; then
+SLEEP=0.1
+else
+SLEEP=0.5
+fi
+TLINES=$(wc -l < $(find $DIR -type f | head -n 1))
+while true; do
+	for f in /Users/cseguier/Documents/scripts/dino_run/*
+	do
+	clear
+	cat $f
+	sleep $SLEEP
+	done
+done
+elif [[ $1 = "help" ]]; then
+STR="run, catarina, world, dna, scare, cheers,"
+LINE="git, time, speak, clear, idle"
+else
+STR="Hi!"
+fi
+
+echo ""
+echo "                        ..  "
+echo "                      / __)  ${STR}"
+echo "               .-^^^-/ /  "
+echo "            __/       /   ${LINE}"
+echo "           <__.|_|-|_|  \n"
