@@ -44,9 +44,9 @@ LINE="Please ?"
 fi
 elif [[ $1 = "idle" ]]; then
 if [[ $2 = "fast" ]]; then
-SLEEP=0.1
+SLEEP=0.05
 else
-SLEEP=0.5
+SLEEP=0.1
 fi
 TLINES=$(wc -l < $(find $DIR -type f | head -n 1))
 while true; do
