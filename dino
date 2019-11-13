@@ -28,9 +28,9 @@ LINE="You're welcome."
 elif [[ $1 = "speak" ]]; then
 STR="Rawr!"
 elif [[ $1 = "clear" ]]; then
-clear
+clear && printf '\e[3J'
 STR="Wokety pokety wokety wok ~"
-LINE="ABRACABRACABRANACK !"
+LINE="ABRACA BRACA BRANACK !"
 elif [[ $1 = "git" ]]; then
 if [[ $2 ]]; then
 git add .
@@ -48,18 +48,23 @@ SLEEP=0.05
 else
 SLEEP=0.1
 fi
-TLINES=$(wc -l < $(find $DIR -type f | head -n 1))
+TLINES=7
+clear && printf '\e[3J'
 while true; do
 	for f in /Users/cseguier/Documents/scripts/dino_run/*
 	do
-	clear
+	tput cup 0 0
 	cat $f
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "math" ]]; then
+bc
+STR="Yay I like Maths ! Do ALL the CALCULATIONS !"
+LINE="... you did good. Dino proud."
 elif [[ $1 = "help" ]]; then
 STR="run, catarina, world, dna, scare, cheers,"
-LINE="git, time, speak, clear, idle"
+LINE="git, time, speak, clear, idle, math"
 else
 STR="Hi!"
 fi
