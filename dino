@@ -58,6 +58,18 @@ while true; do
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "panic" ]]; then
+SLEEP=0.1
+TLINES=7
+clear && printf '\e[3J'
+while true; do
+	for f in /Users/cseguier/Documents/scripts/dino_panic/*
+	do
+	tput cup 0 0
+	cat $f
+	sleep $SLEEP
+	done
+done
 elif [[ $1 = "math" ]]; then
 bc
 STR="Yay I like Maths ! Do ALL the CALCULATIONS !"
