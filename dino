@@ -29,8 +29,8 @@ elif [[ $1 = "speak" ]]; then
 STR="Rawr!"
 elif [[ $1 = "clear" ]]; then
 clear && printf '\e[3J'
-STR="Wokety pokety wokety wok ~"
-LINE="ABRACA BRACA BRANACK !"
+STR="Wokety pokety wokety wok~"
+LINE="A BRAKA BRAKA BRANACK !!"
 elif [[ $1 = "git" ]]; then
 if [[ $2 ]]; then
 git add .
@@ -58,12 +58,12 @@ while true; do
 	sleep $SLEEP
 	done
 done
-elif [[ $1 = "panic" ]]; then
-SLEEP=0.1
+elif [[ $1 = "chill" ]]; then
+SLEEP=0.3
 TLINES=7
 clear && printf '\e[3J'
 while true; do
-	for f in /Users/cseguier/Documents/scripts/dino_panic/*
+	for f in /Users/cseguier/Documents/scripts/dino_chill/*
 	do
 	tput cup 0 0
 	cat $f
@@ -74,9 +74,12 @@ elif [[ $1 = "math" ]]; then
 bc
 STR="Yay I like Maths ! Do ALL the CALCULATIONS !"
 LINE="... you did good. Dino proud."
+elif [[ $1 = "stock" ]]; then
+STR="I NEED SPAAAAACE : du -m | sort -n"
+LINE="go home, touch .reset_library"
 elif [[ $1 = "help" ]]; then
-STR="run, catarina, world, dna, scare, cheers,"
-LINE="git, time, speak, clear, idle, math"
+STR="run, catarina, world, dna, scare, cheers, stock,"
+LINE="git, time, speak, clear, idle, math, chill"
 else
 STR="Hi!"
 fi
