@@ -70,6 +70,21 @@ while true; do
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "motiv" ]]; then
+SLEEP=30
+TLINES=7
+clear && printf '\e[3J'
+while true; do
+	for f in /Users/cseguier/Documents/scripts/dino_motiv/*
+	do
+	tput cup 0 0
+	cat $f
+	sleep $SLEEP
+	tput cup 0 0
+	cat /Users/cseguier/Documents/scripts/00
+	sleep $SLEEP
+	done
+done
 elif [[ $1 = "math" ]]; then
 bc
 STR="Yay I like Maths ! Do ALL the CALCULATIONS !"
@@ -79,7 +94,7 @@ STR="I NEED SPAAAAACE : du -m | sort -n"
 LINE="go home, touch .reset_library"
 elif [[ $1 = "help" ]]; then
 STR="run, catarina, world, dna, scare, cheers, stock,"
-LINE="git, time, speak, clear, idle, math, chill"
+LINE="git, time, speak, clear, idle, math, chill, motiv"
 else
 STR="Hi!"
 fi
