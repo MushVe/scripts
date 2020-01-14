@@ -70,6 +70,22 @@ while true; do
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "bruh" ]]; then
+SLEEP=0.3
+TLINES=7
+clear && printf '\e[3J'
+while true; do
+	for f in /Users/cseguier/Documents/scripts/dino_bruh/*
+	do
+	tput cup 0 0
+	cat $f
+	sleep $SLEEP
+	done
+done
+elif [[ $1 = "ascii" ]]; then
+STR="There you go!"
+LINE="... you know man ascii is a thing, right ?"
+cat /Users/cseguier/Documents/scripts/dino_ascii/ascii
 elif [[ $1 = "motiv" ]]; then
 SLEEP=30
 TLINES=7
@@ -93,8 +109,8 @@ elif [[ $1 = "stock" ]]; then
 STR="I NEED SPAAAAACE : du -m | sort -n"
 LINE="go home, touch .reset_library"
 elif [[ $1 = "help" ]]; then
-STR="run, catarina, world, dna, scare, cheers, stock,"
-LINE="git, time, speak, clear, idle, math, chill, motiv"
+STR="run, catarina, world, dna, scare, cheers, stock, ascii,"
+LINE="git, time, speak, clear, idle, math, chill, motiv, bruh"
 else
 STR="Hi!"
 fi
