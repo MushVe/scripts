@@ -82,6 +82,27 @@ while true; do
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "rule" ]]; then
+SLEEP=0.9
+TLINES=7
+clear && printf '\e[3J'
+while true; do
+	for f in /Users/cseguier/Documents/scripts/dino_rule/*
+	do
+	tput cup 0 0
+	cat $f
+	sleep 1.2
+	tput cup 0 0
+	cat /Users/cseguier/Documents/scripts/00
+	sleep 0.1
+	tput cup 0 0
+	cat /Users/cseguier/Documents/scripts/01
+	sleep 0.5
+	tput cup 0 0
+	cat /Users/cseguier/Documents/scripts/00
+	sleep 0.1
+	done
+done
 elif [[ $1 = "ascii" ]]; then
 STR="There you go!"
 LINE="... you know man ascii is a thing, right ?"
@@ -109,7 +130,7 @@ elif [[ $1 = "stock" ]]; then
 STR="I NEED SPAAAAACE : du -m | sort -n"
 LINE="go home, touch .reset_library"
 elif [[ $1 = "help" ]]; then
-STR="run, catarina, world, dna, scare, cheers, stock, ascii,"
+STR="run, catarina, world, dna, scare, cheers, stock, ascii, rule,"
 LINE="git, time, speak, clear, idle, math, chill, motiv, bruh"
 else
 STR="Hi!"
