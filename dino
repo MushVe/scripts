@@ -82,6 +82,22 @@ while true; do
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "bpm" ]]; then
+if [[ $2 ]]; then
+SLEEP=$(bc <<< "scale=2;(60/$2)-0.01")
+else
+SLEEP=.43
+fi
+TLINES=7
+clear && printf '\e[3J'
+while true; do
+	for f in /Users/cseguier/Documents/scripts/dino_nek/*
+	do
+	tput cup 0 0
+	cat $f
+	sleep $SLEEP
+	done
+done
 elif [[ $1 = "rule" ]]; then
 SLEEP=0.9
 TLINES=7
@@ -131,7 +147,7 @@ STR="I NEED SPAAAAACE : du -m | sort -n"
 LINE="go home, touch .reset_library"
 elif [[ $1 = "help" ]]; then
 STR="run, catarina, world, dna, scare, cheers, stock, ascii, rule,"
-LINE="git, time, speak, clear, idle, math, chill, motiv, bruh"
+LINE="git, time, speak, clear, idle, math, chill, motiv, bruh, bpm"
 else
 STR="Hi!"
 fi
