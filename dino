@@ -122,7 +122,7 @@ done
 elif [[ $1 = "ascii" ]]; then
 STR="There you go!"
 LINE="... you know man ascii is a thing, right ?"
-cat /Users/cseguier/Documents/scripts/dino_ascii/ascii
+cat /Users/cseguier/Documents/scripts/dino_various/ascii
 elif [[ $1 = "motiv" ]]; then
 SLEEP=30
 TLINES=7
@@ -138,6 +138,9 @@ while true; do
 	sleep $SLEEP
 	done
 done
+elif [[ $1 = "poke" ]]; then
+cat /Users/cseguier/Documents/scripts/dino_various/poke
+exit 0
 elif [[ $1 = "math" ]]; then
 bc
 STR="Yay I like Maths ! Do ALL the CALCULATIONS !"
@@ -147,7 +150,7 @@ STR="I NEED SPAAAAACE : du -m | sort -n"
 LINE="go home, touch .reset_library"
 elif [[ $1 = "help" ]]; then
 STR="run, catarina, world, dna, scare, cheers, stock, ascii, rule,"
-LINE="git, time, speak, clear, idle, math, chill, motiv, bruh, bpm"
+LINE="git, time, speak, clear, idle, math, chill, motiv, bruh, bpm, poke"
 else
 STR="Hi!"
 fi
